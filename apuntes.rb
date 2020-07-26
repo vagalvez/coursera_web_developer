@@ -35,8 +35,6 @@ ruby -e 'puts "Hello world!"'
 
 rails console
 
-rails quit
-
 # para explorar la BBDD
 rails console
 names = Pioneer.all #la tabla Pioneer ahora es un array
@@ -52,7 +50,7 @@ Pioneer.create(:first_name => "John", :last_name => "von Neumann")
 #otro ejemplo
 console
 p = Post.new
-p.title = "Widget Preview"
+
 
 ###########
 # OBJETOS #
@@ -424,15 +422,4 @@ Post.first
 Post.find_by(1)
 Post.find_by_title("My First Post")
 
-################
-# VALIDACIONES #
-################
 
-#se definen en los modelos
-
-class Person < ActiveRecord::Base
-	validates_presence_of :name
-	validates_numericality_of :age, :only_integer => true
-	validates_confirmation_of :email
-	validates_length_of :password, :in => 8..20
-end
