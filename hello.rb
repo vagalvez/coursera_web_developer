@@ -405,6 +405,16 @@ rake test
 
 bundle update
 
+##################
+# INSTALAR GEMAS #
+##################
+
+#ir a Gemfile y escribir la gema:
+gem 'record_tag_helper', '~> 1.0'
+
+#luego ejecutar en terminal
+bundle install
+
 ###################
 # REGISTRO ACTIVO #
 ###################
@@ -436,3 +446,21 @@ class Person < ActiveRecord::Base
 	validates_confirmation_of :email
 	validates_length_of :password, :in => 8..20
 end
+
+###########
+# USO GIT #
+###########
+
+'''
+1.crear repositorio a través de la página.
+2. Crear carpeta local (en PC) con mismo nombre de repositorio.
+3. En Terminal, cambiar el directorio (cd) a la carpeta del repositorio.
+4. Ejecutar $ git remote add origin link_repo_github.git
+			$ git push -u origin master
+5. Si añadí archivos a carpeta local, ejecutar (siempre estando en repo) $git add
+6. Para subir los cambios al repo
+			$ git commit -m "rails notes"
+			$ git push origin master
+7. Si quisiera traer el repo al PC (actualizar files por ejemplo)
+			$git pull origin master
+'''
